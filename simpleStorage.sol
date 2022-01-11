@@ -35,6 +35,35 @@ contract simpleproject{
 uint256 num ;
        function store() public view returns(uint256) {
       	return num;
-      }  
+      } 
+//pure
+     function store1(uint256 favnum) public pure  {
+       favnum + favnum;
+      } 
+
+ //what if you group of people want to store the faveratenum you can achive this by structs
+ //structs
+
+ 	structs people{
+ 	uint256 num ;
+ 	string name;
+ 	}
+
+ 	people public person = people({num: 5,name:"surya"});
+
+//a array way of storing a list of object or data
+//this is a dynamic array
+people[] public pep;
+
+  function addpeople(string memory _names, uint256 _numw) public {
+      pep.push(people({numw:_numw ,names:_names}));
+	
+     }
+
+
+//there are 2 ways to store the information in solidity
+//memory and storage
+//in memory data will only store during function exection
+//storage will use even after function execution
 
 }
